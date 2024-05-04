@@ -1,0 +1,32 @@
+{
+  "name": "MyProgressiveWebApp",
+  "short_name": "MyPWA",
+  "start_url": "",
+  "display": "standalone",
+  "background_color": "#F8F7DA",
+  "theme_color": "#8C383A",
+  "description": "PWA with Vite.js, React.js and TypeScript",
+  "icons": [
+    {
+      "src": "icons/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icons/dummy_icon x196.png",
+      "type": "image/png",
+      "sizes": "196x196"
+    },
+    {
+      "src": "icons/dummy_icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "icons/dummy_icon.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}
