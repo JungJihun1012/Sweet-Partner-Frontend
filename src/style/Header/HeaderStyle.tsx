@@ -22,6 +22,7 @@ export const FillHugBackground = styled.div`
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
+  color: #333;
 `
 
 export const IloveYou = styled.p`
@@ -41,6 +42,7 @@ export const ValentineDay = styled.div`
   height: 20px;
   display: flex;
   margin: 0 auto;
+  color: #333;
 `
 
 
@@ -50,6 +52,7 @@ export const Dday = styled.div`
   padding-top: 6px;
   margin: 0 auto;
   font-size: 13px;
+  color: #333;
 `
 
 export const Time = styled.li`
@@ -58,5 +61,6 @@ export const Time = styled.li`
   width: 260px;
   padding-top: 3px;
   margin: 0 auto;
+  color: #333;
 
 `
