@@ -1,21 +1,20 @@
+import styled from "styled-components";
 import { Mobile } from "../Responsive";
-import { FooterMain } from "../components/Footer/FooterMain";
-import FillHug from "../components/Header/FillHug";
-import Hug from "../components/Header/Hug";
-import Main from "../components/Header/Main";
-import SectionMain from "../components/Section/SectionMain";
+import { UserPartnerInfo } from "../components/UserPartnerInfo/UserPartnerInfo";
 
 export default function HomePage() {
   return (
     <>
-      <Mobile>
-        <Main />
-        <Hug>
-          <FillHug />
-        </Hug>
-        <SectionMain />
-        <FooterMain />
-      </Mobile>
+      <Container>
+        <Mobile>
+          <UserPartnerInfo />
+        </Mobile>
+      </Container>
     </>
   );
 }
+
+const Container = styled.div`
+  flex: 1;
+  padding: 15px 24px;
+`;
