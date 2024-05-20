@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Anniversary } from "./Anniversary";
 
 /**
  *
@@ -7,7 +8,9 @@ import styled from "styled-components";
 export const Bottom = () => {
   return (
     <>
-      <Container></Container>
+      <Container>
+        <Anniversary />
+      </Container>
     </>
   );
 };

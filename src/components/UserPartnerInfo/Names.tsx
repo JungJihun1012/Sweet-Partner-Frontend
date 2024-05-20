@@ -7,7 +7,11 @@ export const Names = () => {
     <>
       <Container>
         이은상
-        <FontAwesomeIcon icon={faHeart} color="#FF3B30" fontSize={16} />
+        <FontAwesomeIcon
+          icon={faHeart}
+          style={{ color: "#FF3B30" }}
+          fontSize={16}
+        />
         김수진
       </Container>
     </>
@@ -17,6 +21,6 @@ export const Names = () => {
 const Container = styled.div`
   display: flex;
   gap: 5px;
-  font-size: 14px;
+  font-size: 18px;
   align-items: center;
 `;

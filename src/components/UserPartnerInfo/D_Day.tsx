@@ -10,5 +10,6 @@ export const D_Day = () => {
 
 // eslint-disable-next-line react-refresh/only-export-components
 const Container = styled.div`
-  font-size: 16px;
+  font-size: 22px;
+  font-family: "K";
 `;

@@ -6,12 +6,12 @@ import KakaoMap from "../components/Kakao/KakaoMap";
 export default function HomePage() {
   return (
     <>
-      <Container>
-        <Mobile>
+      <Mobile>
+        <Container>
           <UserPartnerInfo />
           <KakaoMap />
-        </Mobile>
-      </Container>
+        </Container>
+      </Mobile>
     </>
   );
 }
@@ -19,4 +19,7 @@ export default function HomePage() {
 const Container = styled.div`
   flex: 1;
   padding: 15px 24px;
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
 `;

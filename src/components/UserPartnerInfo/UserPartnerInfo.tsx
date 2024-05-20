@@ -18,4 +18,8 @@ const Container = styled.div`
   padding: 20px;
   border-radius: 20px;
   background: #fff;
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+  box-shadow: 2px 2px 10px -4px rgba(0, 0, 0, 0.25);
 `;
