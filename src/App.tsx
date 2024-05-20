@@ -6,6 +6,7 @@ import { BottomNavigation } from "./components/BottomNavigation/BottomNavigation
 
 const HomePage = loadable(() => import("./pages/HomePage"));
 const LoginPage = loadable(() => import("./pages/LoginPage"));
+// const ChatPage = loadable(() => import("./pages/ChatPage"));
 
 function App() {
   return (
