@@ -1,66 +1,29 @@
-import {  useEffect, useState } from "react";
-import { Map, MapMarker } from "react-kakao-maps-sdk";
-import { KakaoMapProps } from "../../types/component";
+import { useEffect } from "react";
+import { Map, useKakaoLoader } from "react-kakao-maps-sdk";
 
-declare global {
-  interface Window {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    kakao: any;
-  }
-}
-
-const KakaoMap = (props: KakaoMapProps) => {
-
-  const {myLoca, level} = props;
-  //eslint-disable-next-line
-  const [location, setLocation] = useState<{ lat : number, lng: number}>({ lat: 33.5563, lng: 126.79581 })
-  const accessKey = import.meta.env.VITE_KAKAOMAP_API;
-
+const KakaoMap = () => {
+  useKakaoLoader({
+    appkey: import.meta.env.VITE_KAKAO_MAP_API_KEY,
+  });
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${accessKey}&autoload=false`;
-    script.async = true;
-    document.head.appendChild(script);
-
-    script.onload = () => {
-      window.kakao.maps.load(() => {
-        const mapContainer = document.getElementById('map'); 
-        const mapOption = {
-          center: new window.kakao.maps.LatLng(myLoca?.lat ?? 33.5563, myLoca?.lng ?? 126.79581),
-          level: level ?? 3,
-        };
-        const map = new window.kakao.maps.Map(mapContainer, mapOption);
-
-        new window.kakao.maps.Marker({
-          position: new window.kakao.maps.LatLng(myLoca?.lat ?? 33.5563, myLoca?.lng ?? 126.79581),
-          map: map,
-        });
-      });
-    };
-
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, [accessKey, myLoca, level]);
-
-  return(
-    <Map
+    console.log(import.meta.env.VITE_KAKAO_MAP_API_KEY);
+  });
+  return (
+    <Map // 지도를 표시할 Container
       id="map"
-      center={myLoca ? myLoca : location}
-      level={level}
-      style={{
-        width: "320px",
-        height: "530px",
-        display: "flex",
-        margin: "0 auto",
-        borderRadius: "10px"
+      center={{
+        // 지도의 중심좌표
+        lat: 33.450701,
+        lng: 126.570667,
       }}
-    >
-      <MapMarker
-        position={myLoca ? myLoca : location}
-      />
-    </Map>
-  )
-}
+      style={{
+        // 지도의 크기
+        width: "100%",
+        height: "350px",
+      }}
+      level={3} // 지도의 확대 레벨
+    />
+  );
+};
 
 export default KakaoMap;
