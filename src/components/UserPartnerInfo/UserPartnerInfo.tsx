@@ -20,6 +20,6 @@ const Container = styled.div`
   background: #fff;
   display: flex;
   flex-flow: column;
-  gap: 20px;
+  gap: 10px;
   box-shadow: 2px 2px 10px -4px rgba(0, 0, 0, 0.25);
 `;

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Mobile } from "../Responsive";
 import { UserPartnerInfo } from "../components/UserPartnerInfo/UserPartnerInfo";
-import KakaoMap from "../components/Kakao/KakaoMap";
+import { Map } from "../components/Map/Map";
+import { WriteDate } from "../components/WriteDate/WriteDate";
 
 export default function HomePage() {
   return (
@@ -9,7 +10,8 @@ export default function HomePage() {
       <Mobile>
         <Container>
           <UserPartnerInfo />
-          <KakaoMap />
+          <WriteDate />
+          <Map />
         </Container>
       </Mobile>
     </>
