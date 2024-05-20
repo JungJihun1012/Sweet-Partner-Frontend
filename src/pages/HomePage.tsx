@@ -9,7 +9,7 @@ export default function HomePage() {
       <Container>
         <Mobile>
           <UserPartnerInfo />
-          <KakaoMap level={4} myLoca={{ lat: 33.5563, lng: 126.79581 }} />
+          <KakaoMap />
         </Mobile>
       </Container>
     </>

@@ -75,6 +75,9 @@ importers:
       eslint-plugin-react-refresh:
         specifier: ^0.4.6
         version: 0.4.7(eslint@8.57.0)
+      kakao.maps.d.ts:
+        specifier: ^0.1.39
+        version: 0.1.39
       typescript:
         specifier: ^5.2.2
         version: 5.4.5

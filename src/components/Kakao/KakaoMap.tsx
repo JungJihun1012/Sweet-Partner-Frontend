@@ -1,41 +1,29 @@
-import { useState } from "react";
-import { Map, MapMarker, useKakaoLoader } from "react-kakao-maps-sdk";
-import { KakaoMapProps } from "../../types/component";
+import { useEffect } from "react";
+import { Map, useKakaoLoader } from "react-kakao-maps-sdk";
 
-declare global {
-  interface Window {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    kakao: any;
-  }
-}
-
-const KakaoMap = (props: KakaoMapProps) => {
-
-  const {myLoca, level} = props;
-  //eslint-disable-next-line
-  const [location, setLocation] = useState<{ lat : number, lng: number}>({ lat: 33.5563, lng: 126.79581 })
-  //eslint-disable-next-line
-  const appkey = useKakaoLoader({
-    appkey: "c8efbad0c44e59c0db5035317755906c"
-  })
-
-  return(
-    <Map
-      center={myLoca ? myLoca : location}
-      level={level}
-      style={{
-        width: "320px",
-        height: "530px",
-        display: "flex",
-        margin: "0 auto",
-        borderRadius: "10px"
+const KakaoMap = () => {
+  useKakaoLoader({
+    appkey: import.meta.env.VITE_KAKAO_MAP_API_KEY,
+  });
+  useEffect(() => {
+    console.log(import.meta.env.VITE_KAKAO_MAP_API_KEY);
+  });
+  return (
+    <Map // 지도를 표시할 Container
+      id="map"
+      center={{
+        // 지도의 중심좌표
+        lat: 33.450701,
+        lng: 126.570667,
       }}
-    >
-      <MapMarker
-        position={myLoca ? myLoca : location}
-      />
-    </Map>
-  )
-}
+      style={{
+        // 지도의 크기
+        width: "100%",
+        height: "350px",
+      }}
+      level={3} // 지도의 확대 레벨
+    />
+  );
+};
 
 export default KakaoMap;
