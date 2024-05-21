@@ -1,12 +1,8 @@
-import { useEffect } from "react";
 import { Map, useKakaoLoader } from "react-kakao-maps-sdk";
 
 const KakaoMap = () => {
   useKakaoLoader({
     appkey: import.meta.env.VITE_KAKAO_MAP_API_KEY,
-  });
-  useEffect(() => {
-    console.log(import.meta.env.VITE_KAKAO_MAP_API_KEY);
   });
   return (
     <Map // 지도를 표시할 Container

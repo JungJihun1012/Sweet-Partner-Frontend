@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { Mobile } from "../Responsive";
-import Chat from "../components/Section/Chat/Chat";
+import Chat from "../components/Chat/Chat";
 
 export default function ChatPage() {
   return (
     <Mobile>
       <Container>
-          <Chat/>
+        <Chat />
       </Container>
     </Mobile>
   );
