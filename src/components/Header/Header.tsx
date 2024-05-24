@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Header = () => {
   return (
     <>
-      <Container>홈</Container>
+      <Container>Sweet Partner</Container>
     </>
   );
 };
@@ -18,4 +18,6 @@ const Container = styled.div`
   align-items: center;
   font-weight: bold;
   font-size: 24px;
+  font-family: "K";
+  color: #ff3b30;
 `;
