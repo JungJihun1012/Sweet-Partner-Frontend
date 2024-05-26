@@ -6,8 +6,10 @@ import { Input, TextField } from "@mui/material";
 import { Calendar } from "react-calendar";
 import "../style/CalendarRegister.css";
 import moment from "moment";
+import { useUser } from "../store/User";
 
 export default function RegisterPage() {
+  const { user } = useUser();
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   const location = useLocation();
@@ -26,8 +28,8 @@ export default function RegisterPage() {
           <Title>정보입력</Title>
           <Form>
             <InputArea></InputArea>
-            <TextInput fullWidth color="info" value={"asdf"} disabled />
-            <TextInput fullWidth label="이메일" color="info" />
+            <TextInput fullWidth color="info" value={user.name} disabled />
+            <TextInput fullWidth color="info" value={user.email} disabled />
             <CalendarArea>
               <CalendarTitle>사귄 날짜</CalendarTitle>
               <Calendar
