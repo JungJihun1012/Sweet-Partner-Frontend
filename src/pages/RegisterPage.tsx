@@ -3,15 +3,13 @@ import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Mobile } from "../Responsive";
 import { Input, TextField } from "@mui/material";
-import { Calendar } from "react-calendar";
-import "../style/CalendarRegister.css";
-import moment from "moment";
 import { useUser } from "../store/User";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function RegisterPage() {
   const { user } = useUser();
-  const [selectedDate, setSelectedDate] = useState(new Date());
-
+  const [date, setDate] = useState(new Date());
   const location = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
@@ -31,19 +29,11 @@ export default function RegisterPage() {
             <TextInput fullWidth color="info" value={user.name} disabled />
             <TextInput fullWidth color="info" value={user.email} disabled />
             <CalendarArea>
-              <CalendarTitle>사귄 날짜</CalendarTitle>
-              <Calendar
-                view="month"
-                prev2Label={null}
-                next2Label={null}
-                calendarType="gregory"
-                onClickDay={(props) => {
-                  console.log(props);
-                  return "active";
-                }}
-                // onChange={handleClick}
-                value={selectedDate}
-                formatDay={(locale, date) => moment(date).format("D")}
+              <DatePicker
+                dateFormat={"yyyy.MM.dd"}
+                shouldCloseOnSelect
+                selected={date}
+                onChange={(date) => setDate(date!)}
               />
             </CalendarArea>
           </Form>
