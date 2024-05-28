@@ -29,11 +29,15 @@ export default function RegisterPage() {
             <TextInput fullWidth color="info" value={user.name} disabled />
             <TextInput fullWidth color="info" value={user.email} disabled />
             <CalendarArea>
+              {date.toString}
               <DatePicker
                 dateFormat={"yyyy.MM.dd"}
                 shouldCloseOnSelect
                 selected={date}
-                onChange={(date) => setDate(date!)}
+                onChange={(date) => {
+                  setDate(date!);
+                  console.log(date);
+                }}
               />
             </CalendarArea>
           </Form>
